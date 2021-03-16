@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+
 .App {
   text-align: center;
   display: grid;
   box-sizing: border-box;
 }
 
-
-
-a {
-  margin: 100px 40px;
+.home-nav {
+  grid-column: 3;
+  grid-row: 3;
 }
 
 .players-container {
@@ -15,18 +17,27 @@ a {
 }
 
 .team-form {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.newhampshirepavingpros.com%2Fuploads%2F9%2F6%2F9%2F6%2F96965846%2Fpublished%2F6611904-orig.jpg%3F1485566266&f=1&nofb=1");
+  background-size: cover;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 10px;
 }
 
-.team-name-search {
-  grid-column: 2 / 3;
+label {
+  color: white;
+  text-shadow: black 2px 2px;
+  font-family: Oxygen;
 }
+
 
 .form {
   grid-column: 2 / 3; 
+}
+
+.submit {
+  grid-column: 2 / 3;
 }
 
 h2 {
@@ -38,6 +49,49 @@ h2 {
   background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F-1r8i1TlSM7E%2FXA8xvWgs9HI%2FAAAAAAAAB3E%2Fyw6FibzF-XE8UKYBJRyCqJV3SrHK7857wCHMYCw%2Fs1600%2Fknicks-logos.jpg&f=1&nofb=1");
   background-size: contain;
   height: 700px;
+}
 
+
+@media screen and (min-width: 400px) {
+  .team-form {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  #team-name-create, #center, .submit {
+    grid-column: 3 / 4;
+  }
+
+  #sg, #pf{
+    grid-column: 4 / 5;
+  }
+
+} 
+
+@media screen and (min-width: 800px) {
+  .team-form {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(, 1fr);
+  }
+
+  #team-name-create, #center, .submit {
+    grid-column: 4 / 5;
+  }
+
+  #pg {
+    grid-column: 3 / 4;
+  }
+ 
+  #sf {
+    grid-column:;
+  }
+
+  #sg {
+    grid-column: 5 / 6;
+  }
+
+  #pf {
+    grid-column: 6 / 7;
+  }
 }
 

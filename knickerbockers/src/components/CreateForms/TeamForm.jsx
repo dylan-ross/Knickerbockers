@@ -4,7 +4,7 @@ function TeamForm() {
 const [name, setName] = useState("")
 
   return (
-    <div className="team-name-search">
+    <div className="form" id="team-name-create">
       <label htmlFor="team">Team Name:</label>
       <input
         required
