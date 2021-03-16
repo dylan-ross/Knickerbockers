@@ -1,7 +1,11 @@
 .App {
   text-align: center;
+  display: grid;
 }
 nav a {
   margin: 2px 4px;
 }
 
+.team-form {
+  display: grid;
+}

@@ -18,6 +18,7 @@ function TeamForm(props) {
   };
   return (
     <form onSubmit={handleSubmit}>
+      <div className="team-form">
       <label htmlFor="team">Team Name:</label>
       <input
         required
@@ -67,6 +68,7 @@ function TeamForm(props) {
         onChange={(e) => setPosition(e.target.value)}
       />
       <button type="submit">We Got Next</button>
+      </div>
     </form>
   );
 }
