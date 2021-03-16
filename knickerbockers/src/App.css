@@ -1,11 +1,43 @@
 .App {
   text-align: center;
   display: grid;
+  box-sizing: border-box;
 }
-nav a {
-  margin: 2px 4px;
+
+
+
+a {
+  margin: 100px 40px;
+}
+
+.players-container {
+  display: grid;
 }
 
 .team-form {
   display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 10px;
 }
+
+.team-name-search {
+  grid-column: 2 / 3;
+}
+
+.form {
+  grid-column: 2 / 3; 
+}
+
+h2 {
+  background-color: black;
+  color: white;
+}
+
+.player-card {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F-1r8i1TlSM7E%2FXA8xvWgs9HI%2FAAAAAAAAB3E%2Fyw6FibzF-XE8UKYBJRyCqJV3SrHK7857wCHMYCw%2Fs1600%2Fknicks-logos.jpg&f=1&nofb=1");
+  background-size: contain;
+  height: 700px;
+
+}
+

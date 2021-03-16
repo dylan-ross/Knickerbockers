@@ -1,21 +1,21 @@
-import { baseURL, config } from "./services";
+import { playerURL, config } from "./services";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./components/Navbar";
 import Player from "./components/Player";
-import TeamForm from "./components/TeamForm";
+import NewSquad from "./components/Squad";
 import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
   const [players, setPlayers] = useState([]);
-
   const [toggleFetch, setToggleFetch] = useState(false);
 
   useEffect(() => {
     const playerInfo = async () => {
-      const resp = await axios.get(baseURL, config);
+      const resp = await axios.get(playerURL, config);
       setPlayers(resp.data.records);
+      console.log(resp.data.records);
     };
     playerInfo();
   }, [toggleFetch]);
@@ -34,9 +34,9 @@ function App() {
         </div>
       </Route>
       <Route exact path="/new">
-        <TeamForm setToggleFetch={setToggleFetch} />
+        <NewSquad setToggleFetch={setToggleFetch} />
       </Route>
-      <Route path="/player/:fields.name">
+      <Route path="/player/:name">
         <Player players={players} />
       </Route>
     </div>
@@ -44,3 +44,17 @@ function App() {
 }
 
 export default App;
+
+// {
+  /* <Link to="/Clyde">Walt Frazier</Link>
+          <Route exact path="/Clyde">
+            <div>
+              <h2>Walt "Clyde" Frazier</h2>
+              </div>
+          </Route> */
+
+  /* <Link to="/BK">Bernard King</Link>
+          <Link to="/Melo">Carmelo Anthony</Link>
+          <Link to="/Willis">Willis Reed</Link>
+          <Link to="/Pat">Patrick Ewing</Link> */
+
