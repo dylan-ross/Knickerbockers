@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function TeamForm() {
-const [name, setName] = useState("")
-
+  const [name, setName] = useState("")
+  
+  useEffect(() => {
+  
+  })
+  
   return (
     <div className="form" id="team-name-create">
       <label htmlFor="team">Team Name:</label>

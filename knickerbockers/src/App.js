@@ -3,7 +3,7 @@ import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./components/Navbar";
 import Player from "./components/Player";
-import NewSquad from "./components/Squad";
+import NewSquad from "./components/NewSquad";
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -36,32 +36,32 @@ function App() {
       <Route exact path="/new">
         <NewSquad setToggleFetch={setToggleFetch} />
       </Route>
-      <Route path="/player/:name">
-        <Player players={players} />
+      <Route path={`/player/:fields`}>
+      <div>
+          <Player players={players}/>
+      </div>
       </Route>
-    </div>
+          </div >
   );
 }
 
 export default App;
 
-
-
-
-{/* <Route path="/new">
+{
+  /* <Route path="/new">
 <Form setToggleFetch={setToggleFetch} />
-</Route> */}
+</Route> */
+}
 
 // {
-  /* <Link to="/Clyde">Walt Frazier</Link>
+/* <Link to="/Clyde">Walt Frazier</Link>
           <Route exact path="/Clyde">
             <div>
               <h2>Walt "Clyde" Frazier</h2>
               </div>
           </Route> */
 
-  /* <Link to="/BK">Bernard King</Link>
+/* <Link to="/BK">Bernard King</Link>
           <Link to="/Melo">Carmelo Anthony</Link>
           <Link to="/Willis">Willis Reed</Link>
           <Link to="/Pat">Patrick Ewing</Link> */
-

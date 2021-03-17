@@ -12,8 +12,12 @@ import Button from "./CreateForms/Button"
 
 
 function NewSquad(props) {
-  console.log(props)
   const [name, setName] = useState("")
+  const [powerForward, setPowerForward] = useState("")
+  const [pointGuard, setPointGuard] = useState("")
+  const [shootingGuard, setShootingGuard] = useState("")
+  const [smallForward, setSmallForward] = useState("")
+  const [center, setCenter] = useState("")
   
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,12 +32,30 @@ function NewSquad(props) {
   return (
     <form onSubmit={handleSubmit}>
       <div className="team-form">
-        <TeamForm name={name}/>
-        <PgForm name={name}/>
-        <SgForm name={name}/>
-        <SfForm name={name}/>
-        <PfForm name={name}/>
-        <CenterForm name={name}/>
+        <TeamForm />
+        <PgForm />
+        <SgForm />
+        <SfForm />
+        <div className="form" id="pf">
+      <label htmlFor="pf">Power Forward</label>
+      <input
+        required
+        id="pf"
+        type="text"
+        value={powerForward}
+        onChange={(e) => setPowerForward(e.target.value)}
+      />
+    </div>
+    <div className="form" id="center">
+      <label htmlFor="center">Center</label>
+      <input
+        required
+        id="center"
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+    </div>
         <button className="submit"type="submit">We Got Next</button>
       </div>
     </form>
