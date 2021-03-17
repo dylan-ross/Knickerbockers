@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "./components/Navbar";
 import PlayerCard from "./components/PlayerCard";
 import NewSquad from "./components/NewSquad";
+import Squad from "./components/Squad"
 import { useEffect, useState } from "react";
 import "./App.css";
 
@@ -33,10 +34,13 @@ function App() {
         </div>
       </Route>
       <Route exact path="/new">
-        <NewSquad setToggleFetch={setToggleFetch} />
+        <NewSquad setToggleFetch={setToggleFetch}/>
       </Route>
-      <Route path="/team">
-        <div></div>
+      <Route exact path="/team">
+        <Squad setToggleFetch={setToggleFetch}/>
+      </Route>
+      <Route exact path="/edit/:id">
+        <NewSquad setToggleFetch={setToggleFetch}/>
       </Route>
       <Route path="/player/:name">
         <PlayerCard players={players} />
@@ -50,11 +54,3 @@ export default App;
 
 
 
-
-{/* <Route exact path="/">
-<div className="sitcoms-container">
-  {sitcoms.map((sitcom) => (
-    <Sitcom key={sitcom.id} sitcom={sitcom} />
-  ))}
-</div>
-</Route> */}

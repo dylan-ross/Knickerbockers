@@ -1,9 +1,13 @@
 import { useParams } from "react-router-dom";
+import "../"
+
 
 function PlayerCard(props) {
   const params = useParams()
-  const player = (props.players.find((player)=>player.id === params.name));
-
+  const player = (props.players.find((player) => player.id === params.name));
+  if (!player) {
+    return <h2></h2>
+  }
   return (
     <div className="player-card">
       <h2>{player.fields.name}</h2>

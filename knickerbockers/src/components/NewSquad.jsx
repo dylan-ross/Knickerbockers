@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { teamsURL, config } from "../services";
 // import {useHistory, useParams} from "react-router-dom"
-import TeamForm from "./CreateForms/TeamForm";
+// import TeamForm from "./CreateForms/TeamForm";
 // import PgForm from "./CreateForms/PgForm"
 // import SgForm from "./CreateForms/SgForm"
 // import SfForm from "./CreateForms/SfForm"
@@ -10,13 +10,16 @@ import TeamForm from "./CreateForms/TeamForm";
 // import CenterForm from "./CreateForms/CenterForm"
 // import Button from "./CreateForms/Button"
 
-function NewSquad(props) {
+function NewSquad() {
   const [teamName, setTeamName] = useState("");
   const [powerForward, setPowerForward] = useState("");
   const [pointGuard, setPointGuard] = useState("");
   const [shootingGuard, setShootingGuard] = useState("");
   const [smallForward, setSmallForward] = useState("");
   const [center, setCenter] = useState("");
+
+
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,7 +32,7 @@ function NewSquad(props) {
       center,
     };
     await axios.post(teamsURL, { fields: newTeam }, config);
-    props.setToggleFetch((curr) => !curr);
+    // props.setToggleFetch((curr) => !curr);
   };
 
   return (
