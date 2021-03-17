@@ -1,0 +1,44 @@
+.squad-form {
+  height: 100vh;
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.newhampshirepavingpros.com%2Fuploads%2F9%2F6%2F9%2F6%2F96965846%2Fpublished%2F6611904-orig.jpg%3F1485566266&f=1&nofb=1");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+}
+
+#team-name-create, #pg, #sg, #sf, #pf, #center, .submit {
+  grid-column: 2 / 3;
+  color: white;
+  border-radius: 20%;
+}
+
+#team-name-create {
+  grid-row: 2 / 3;
+}
+
+#pg {
+  grid-row: 3 / 4;
+}
+
+#sg {
+  grid-row: 4 / 5;
+}
+
+#sf {
+  grid-row: 5 / 6;
+}
+
+#pf {
+  grid-row: 6 / 7;
+}
+
+#center {
+  grid-row: 7 / 8;
+}
+
+.submit {
+  grid-row: 8 / 9 ;
+  color: black;
+  border-radius: 10%;
+}

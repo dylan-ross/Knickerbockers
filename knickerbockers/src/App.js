@@ -6,7 +6,7 @@ import PlayerCard from "./components/PlayerCard";
 import NewSquad from "./components/NewSquad";
 import Squad from "./components/Squad"
 import { useEffect, useState } from "react";
-import "./App.css";
+import "./App.css"
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -37,7 +37,7 @@ function App() {
         <NewSquad setToggleFetch={setToggleFetch}/>
       </Route>
       <Route exact path="/team">
-        <Squad setToggleFetch={setToggleFetch}/>
+        <Squad setToggleFetch={setToggleFetch} players={players}/>
       </Route>
       <Route exact path="/edit/:id">
         <NewSquad setToggleFetch={setToggleFetch}/>

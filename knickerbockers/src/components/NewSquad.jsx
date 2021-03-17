@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { teamsURL, config } from "../services";
+import "../styles/SquadForm.css"
 // import {useHistory, useParams} from "react-router-dom"
 // import TeamForm from "./CreateForms/TeamForm";
 // import PgForm from "./CreateForms/PgForm"
@@ -36,7 +37,7 @@ function NewSquad() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="squad-form">
       <div className="form" id="team-name-create">
         <label htmlFor="team">Team Name:</label>
         <input

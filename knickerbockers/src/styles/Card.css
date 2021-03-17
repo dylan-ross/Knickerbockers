@@ -1,0 +1,21 @@
+.player-card {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.newhampshirepavingpros.com%2Fuploads%2F9%2F6%2F9%2F6%2F96965846%2Fpublished%2F6611904-orig.jpg%3F1485566266&f=1&nofb=1");
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.player-name, .player-position, .ppg, .apg, .rpg {
+  grid-column: 2 / 3;
+  background-color: black;
+  border-radius: 20%;
+}
+
+/* .player-pic {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Willis_Reed_1972_publicity_photo.jpg");
+  background-size: cover;
+} */

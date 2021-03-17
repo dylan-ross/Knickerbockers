@@ -1,20 +1,60 @@
 import axios from "axios";
 import { teamsURL, config } from "../services";
 import { useEffect, useState } from "react";
-
+import { useHistory} from "react-router-dom"
+import "../styles/Squads.css"
 import {Link} from "react-router-dom"
 
-function Squad() {
+function Squad(props) {
   const [teamsInfo, setTeamsInfo] = useState([]);
+  const history = useHistory();
+  console.log(props)
+  
 
   useEffect(() => {
     const teamInfo = async () => {
       const resp = await axios.get(teamsURL, config);
       setTeamsInfo(resp.data.records);
-      console.log(resp.data.records[0].id)
+      console.log(resp.data.records)
     };
     teamInfo();
   }, []);
+
+console.log(teamsInfo)
+
+  const handleClick = async (e) => {
+    e.preventDefault();
+    const benchURL = `${teamsURL}/${props.players.id}`;
+    await axios.delete(benchURL, config); 
+  }
+  
+
+
+  return (
+    <div className="teams-container">
+      {teamsInfo.map((teamInfo) => (
+        <div key={teamInfo.id}>
+          <h2 className="team-name">{teamInfo.fields.teamName}</h2>
+          <p className="pg">point guard: {teamInfo.fields.pointGuard}</p>
+          <p className="sg">shooting guard: {teamInfo.fields.shootingGuard}</p>
+          <p className="sf">small forward: {teamInfo.fields.smallForward}</p>
+          <p className="pf">power forward: {teamInfo.fields.powerForward}</p>
+          <p className="center">center: {teamInfo.fields.center}</p>
+          <button onClick={handleClick}>Benched</button>
+          <Link to={`/edit/${teamInfo.id}`}>
+        <button>
+          subs
+        </button>
+      </Link>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Squad;
+
+
 // useEffect(()=> {
 //     const bench = async () => {
 //     const benchURL = `${teamsURL}/${teamInfo.id}`
@@ -41,27 +81,3 @@ function Squad() {
   //   // fire the useEffect so our GET request shows the updated table
   //   props.setToggleFetch((curr) => !curr);
   // }
-
-  return (
-    <div className="teams-container">
-      {teamsInfo.map((teamInfo) => (
-        <div key={teamInfo.id}>
-          <h2>{teamInfo.fields.teamName}</h2>
-          <p>point guard: {teamInfo.fields.pointGuard}</p>
-          <p>shooting guard: {teamInfo.fields.shootingGuard}</p>
-          <p>small forward: {teamInfo.fields.smallForward}</p>
-          <p>power forward: {teamInfo.fields.powerForward}</p>
-          <p>center: {teamInfo.fields.center}</p>
-          <button>Benched</button>
-          <Link to={`/edit/${teamInfo.id}`}>
-        <button>
-          subs
-        </button>
-      </Link>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export default Squad;
