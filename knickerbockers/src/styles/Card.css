@@ -15,7 +15,6 @@
   border-radius: 20%;
 }
 
-/* .player-pic {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/4f/Willis_Reed_1972_publicity_photo.jpg");
-  background-size: cover;
-} */
+.player-pic {
+  width: 200px;
+}

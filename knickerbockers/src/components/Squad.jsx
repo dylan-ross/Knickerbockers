@@ -1,31 +1,27 @@
 import axios from "axios";
 import { teamsURL, config } from "../services";
 import { useEffect, useState } from "react";
-import { useHistory} from "react-router-dom"
 import "../styles/Squads.css"
 import {Link} from "react-router-dom"
 
 function Squad(props) {
   const [teamsInfo, setTeamsInfo] = useState([]);
-  const history = useHistory();
-  console.log(props)
   
 
   useEffect(() => {
     const teamInfo = async () => {
       const resp = await axios.get(teamsURL, config);
       setTeamsInfo(resp.data.records);
-      console.log(resp.data.records)
     };
     teamInfo();
   }, []);
 
-console.log(teamsInfo)
+console.log(props)
 
-  const handleClick = async (e) => {
-    e.preventDefault();
-    const benchURL = `${teamsURL}/${props.players.id}`;
-    await axios.delete(benchURL, config); 
+  const handleClick = async (id) => {
+    const benchURL = `${teamsURL}/${id}`;
+    await axios.delete(benchURL, config);
+    props.setToggleFetch((curr) => !curr)
   }
   
 
@@ -40,7 +36,7 @@ console.log(teamsInfo)
           <p className="sf">small forward: {teamInfo.fields.smallForward}</p>
           <p className="pf">power forward: {teamInfo.fields.powerForward}</p>
           <p className="center">center: {teamInfo.fields.center}</p>
-          <button onClick={handleClick}>Benched</button>
+          <button onClick={()=>handleClick( teamInfo.id)}>Benched</button>
           <Link to={`/edit/${teamInfo.id}`}>
         <button>
           subs

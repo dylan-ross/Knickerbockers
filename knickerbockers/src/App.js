@@ -40,7 +40,7 @@ function App() {
         <Squad setToggleFetch={setToggleFetch} players={players}/>
       </Route>
       <Route exact path="/edit/:id">
-        <NewSquad setToggleFetch={setToggleFetch}/>
+        <NewSquad players={players }/>
       </Route>
       <Route path="/player/:name">
         <PlayerCard players={players} />

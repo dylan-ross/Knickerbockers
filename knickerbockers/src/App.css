@@ -3,9 +3,7 @@
 
 .App { 
   text-align: center;
-  display: grid;
-  box-sizing: border-box;
-
+  /* background-color: black; */
 }
 
 .nav {
