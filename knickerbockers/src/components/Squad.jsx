@@ -1,15 +1,13 @@
 import axios from "axios";
 import { teamsURL, config } from "../services";
 import { useEffect, useState } from "react";
-import "../styles/Squads.css"
-import { Link, useHistory} from "react-router-dom"
-
+import "../styles/Squads.css";
+import { Link, useHistory } from "react-router-dom";
 
 function Squad(props) {
   const [teamsInfo, setTeamsInfo] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(false);
-  const history = useHistory()
-  
+  const history = useHistory();
 
   useEffect(() => {
     const teamInfo = async () => {
@@ -19,33 +17,49 @@ function Squad(props) {
     teamInfo();
   }, [toggleFetch]);
 
-console.log(props)
+  console.log(props);
 
   const handleClick = async (id) => {
     const benchURL = `${teamsURL}/${id}`;
     await axios.delete(benchURL, config);
-    setToggleFetch((curr) => !curr)
-    history.push("/")
-  }
-  
-
+    setToggleFetch((curr) => !curr);
+    history.push("/");
+  };
 
   return (
     <div className="teams-container">
       {teamsInfo.map((teamInfo) => (
         <div key={teamInfo.id} className={teamInfo.id}>
           <h2 className="team-name">{teamInfo.fields.teamName}</h2>
-          <p className="pg">point guard: {teamInfo.fields.pointGuard}</p>
-          <p className="sg">shooting guard: {teamInfo.fields.shootingGuard}</p>
-          <p className="sf">small forward: {teamInfo.fields.smallForward}</p>
-          <p className="pf">power forward: {teamInfo.fields.powerForward}</p>
-          <p className="center">center: {teamInfo.fields.center}</p>
-          <button onClick={()=>handleClick( teamInfo.id)}>Benched</button>
+          <Link key={teamInfo.fields.pointGuard} to={`/player/${teamInfo.fields.pointGuard}`}>
+            <p className="player" id="pg">
+              point guard: {teamInfo.fields.pointGuard}
+            </p>
+          </Link>
+          <Link key={teamInfo.fields.shootingGuard} to={`/player/${teamInfo.fields.shootingGuard}`}>
+          <p className="player" id="sg">
+            shooting guard: {teamInfo.fields.shootingGuard}
+            </p>
+          </Link>
+          <Link key={teamInfo.fields.smallForward} to={`/player/${teamInfo.fields.smallForward}`}>
+          <p className="player" id="sf">
+            small forward: {teamInfo.fields.smallForward}
+          </p>
+          </Link>
+          <Link key={teamInfo.fields.powerForward} to={`/player/${teamInfo.fields.powerForward}`}>
+          <p className="player" id="pf">
+            power forward: {teamInfo.fields.powerForward}
+          </p>
+          </Link>
+          <Link key={teamInfo.fields.center} to={`/player/${teamInfo.fields.center}`}>
+          <p className="player" id="center">
+            center: {teamInfo.fields.center}
+          </p>
+          </Link>
+          <button onClick={() => handleClick(teamInfo.id)}>Benched</button>
           <Link to={`/edit/${teamInfo.id}`}>
-        <button>
-          subs
-        </button>
-      </Link>
+            <button>subs</button>
+          </Link>
         </div>
       ))}
     </div>
@@ -53,7 +67,3 @@ console.log(props)
 }
 
 export default Squad;
-
-
-
-  

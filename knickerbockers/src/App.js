@@ -2,13 +2,12 @@ import { playerURL, config } from "./services";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./components/Navbar";
-import PlayerCard from "./components/PlayerCard";
+import KnicksCard from "./components/KnicksCard";
 import NewSquad from "./components/NewSquad";
-import Squad from "./components/Squad"
-import EditSquad from "./components/EditSquad"
-import Knicks from "./components/Knicks"
+import Squad from "./components/Squad";
+import Knicks from "./components/Knicks";
 import { useEffect, useState } from "react";
-import "./App.css"
+import "./App.css";
 
 function App() {
   const [players, setPlayers] = useState([]);
@@ -22,31 +21,26 @@ function App() {
     playerInfo();
   }, [toggleFetch]);
 
-
   return (
     <div className="App">
       <Navbar />
       <Route exact path="/">
-        <Squad setToggleFetch={setToggleFetch} players={players}/>
+        <Squad setToggleFetch={setToggleFetch} players={players} />
       </Route>
       <Route exact path="/new">
-        <NewSquad setToggleFetch={setToggleFetch}/>
+        <NewSquad setToggleFetch={setToggleFetch} />
       </Route>
       <Route exact path="/edit/:id">
-        <EditSquad players={players }/>
-      </Route>
-      <Route path="/player/:name">
-        <PlayerCard players={players} />
+        <NewSquad setToggleFetch={setToggleFetch} />
       </Route>
       <Route path="/knicks">
-        <Knicks/>
+        <Knicks />
+      </Route>
+      <Route path="/player/:name">
+        <KnicksCard players={players} />
       </Route>
     </div>
   );
 }
 
 export default App;
-
-
-
-

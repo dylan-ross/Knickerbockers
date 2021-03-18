@@ -1,9 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
 import { teamsURL, config } from "../services";
-import{useHistory} from "react-router-dom"
+// import{useHistory} from "react-router-dom"
 import "../styles/SquadForm.css"
-// import {useHistory, useParams} from "react-router-dom"
+import {useHistory, useParams} from "react-router-dom"
 // import TeamForm from "./CreateForms/TeamForm";
 // import PgForm from "./CreateForms/PgForm"
 // import SgForm from "./CreateForms/SgForm"
@@ -20,6 +20,7 @@ function NewSquad(props) {
   const [smallForward, setSmallForward] = useState("");
   const [center, setCenter] = useState("");
   const history = useHistory()
+  const params = params()
 
 
   
@@ -34,7 +35,15 @@ function NewSquad(props) {
       powerForward,
       center,
     };
-    await axios.post(teamsURL, { fields: newTeam }, config);
+
+    if (params.id) {
+      const putURL = `${teamsURL}/${params.id}`
+      await axios.put(putURL, { fields: newTeam }, config);
+    } else {
+      await axios.post(teamsURL, { fields: newTeam }, config);
+    }
+
+    // await axios.post(teamsURL, { fields: newTeam }, config);
     props.setToggleFetch((curr) => !curr);
     history.push("/")
   };
