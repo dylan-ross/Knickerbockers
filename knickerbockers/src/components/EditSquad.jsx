@@ -3,16 +3,8 @@ import axios from "axios";
 import { teamsURL, config } from "../services";
 import{useHistory} from "react-router-dom"
 import "../styles/SquadForm.css"
-import TeamForm from "./CreateForms/TeamForm";
-// import PgForm from "./CreateForms/PgForm"
-// import SgForm from "./CreateForms/SgForm"
-// import SfForm from "./CreateForms/SfForm"
-// import PfForm from "./CreateForms/PfForm"
-// import CenterForm from "./CreateForms/CenterForm"
-// import Button from "./CreateForms/Button"
 
-function NewSquad(props) {
-  // const params = params()
+function EditSquad(props) {
   const [teamName, setTeamName] = useState("");
   const [powerForward, setPowerForward] = useState("");
   const [pointGuard, setPointGuard] = useState("");
@@ -22,8 +14,6 @@ function NewSquad(props) {
   const history = useHistory()
   console.log(props)
 
-
-  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,10 +26,6 @@ function NewSquad(props) {
       center,
     };
 
-
-
-    
-
     // if (props.id) {
     //   const putURL = `${teamsURL}/team.id`
     //   await axios.put(putURL, { fields: newTeam }, config);
@@ -47,8 +33,8 @@ function NewSquad(props) {
     //   await axios.post(teamsURL, { fields: newTeam }, config);
     // }
 
-    await axios.post(teamsURL, { fields: newTeam }, config);
-    props.setToggleFetch((curr) => !curr);
+    await axios.put(teamsURL, { fields: newTeam }, config);
+    // props.setToggleFetch((curr) => !curr);
     history.push("/")
   };
 
@@ -120,4 +106,4 @@ function NewSquad(props) {
     </form>
   );
 }
-export default NewSquad;
+export default EditSquad;

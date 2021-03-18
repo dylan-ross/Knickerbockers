@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { playerURL, config } from "../services";
 import { Link, Route } from "react-router-dom";
+import KnicksCard from "./KnicksCard"
 import axios from "axios";
 
 function Knicks() {
@@ -25,7 +26,10 @@ function Knicks() {
             <h2>{player.fields.name}</h2>
           </Link>
         ))}
-        </div>
+      </div>
+      <Route path="/player/:id">
+        <KnicksCard players={players} />
+      </Route>
     </div>
   );
 }

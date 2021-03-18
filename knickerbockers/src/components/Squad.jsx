@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "../styles/Squads.css";
 import { Link, useHistory } from "react-router-dom";
 
-function Squad(props) {
+function Squad() {
   const [teamsInfo, setTeamsInfo] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(false);
   const history = useHistory();
@@ -17,7 +17,6 @@ function Squad(props) {
     teamInfo();
   }, [toggleFetch]);
 
-  console.log(props);
 
   const handleClick = async (id) => {
     const benchURL = `${teamsURL}/${id}`;
@@ -31,27 +30,27 @@ function Squad(props) {
       {teamsInfo.map((teamInfo) => (
         <div key={teamInfo.id} className={teamInfo.id}>
           <h2 className="team-name">{teamInfo.fields.teamName}</h2>
-          <Link key={teamInfo.fields.pointGuard} to={`/player/${teamInfo.fields.pointGuard}`}>
+          <Link key={teamInfo.fields.pointGuard} to={`/player/${teamInfo.id}`}>
             <p className="player" id="pg">
               point guard: {teamInfo.fields.pointGuard}
             </p>
           </Link>
-          <Link key={teamInfo.fields.shootingGuard} to={`/player/${teamInfo.fields.shootingGuard}`}>
+          <Link key={teamInfo.fields.shootingGuard} to={`/player/${teamInfo.id}`}>
           <p className="player" id="sg">
             shooting guard: {teamInfo.fields.shootingGuard}
             </p>
           </Link>
-          <Link key={teamInfo.fields.smallForward} to={`/player/${teamInfo.fields.smallForward}`}>
+          <Link key={teamInfo.fields.smallForward} to={`/player/${teamInfo.id}`}>
           <p className="player" id="sf">
             small forward: {teamInfo.fields.smallForward}
           </p>
           </Link>
-          <Link key={teamInfo.fields.powerForward} to={`/player/${teamInfo.fields.powerForward}`}>
+          <Link key={teamInfo.fields.powerForward} to={`/player/${teamInfo.id}`}>
           <p className="player" id="pf">
             power forward: {teamInfo.fields.powerForward}
           </p>
           </Link>
-          <Link key={teamInfo.fields.center} to={`/player/${teamInfo.fields.center}`}>
+          <Link key={teamInfo.fields.center} to={`/player/${teamInfo.id}`}>
           <p className="player" id="center">
             center: {teamInfo.fields.center}
           </p>
