@@ -4,6 +4,9 @@
   height: 100vh;
 }
 
-#team-name {
+
+
+.team-name {
   color: white;
+  text-shadow: black 2px 2px;
 }

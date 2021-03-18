@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import PlayerCard from "./components/PlayerCard";
 import NewSquad from "./components/NewSquad";
 import Squad from "./components/Squad"
+import EditSquad from "./components/EditSquad"
+import Knicks from "./components/Knicks"
 import { useEffect, useState } from "react";
 import "./App.css"
 
@@ -20,30 +22,24 @@ function App() {
     playerInfo();
   }, [toggleFetch]);
 
+
   return (
     <div className="App">
       <Navbar />
       <Route exact path="/">
-        <h1>Knickerbockers</h1>
-        <div className="players-container">
-          {players.map((player) => (
-            <Link key={player.id} to={`/player/${player.id}`}>
-              <h2>{player.fields.name}</h2>
-            </Link>
-          ))}
-        </div>
+        <Squad setToggleFetch={setToggleFetch} players={players}/>
       </Route>
       <Route exact path="/new">
         <NewSquad setToggleFetch={setToggleFetch}/>
       </Route>
-      <Route exact path="/team">
-        <Squad setToggleFetch={setToggleFetch} players={players}/>
-      </Route>
       <Route exact path="/edit/:id">
-        <NewSquad players={players }/>
+        <EditSquad players={players }/>
       </Route>
       <Route path="/player/:name">
         <PlayerCard players={players} />
+      </Route>
+      <Route path="/knicks">
+        <Knicks/>
       </Route>
     </div>
   );
