@@ -1,34 +1,22 @@
-import axios from "axios";
-import { playerURL, config } from "../services";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../styles/Card.css";
 
-function KnicksCard() {
-  const [players, setPlayers] = useState([]);
-  const params = useParams();
+function KnicksCard(props) {
+  const params = useParams()
 
-  useEffect(() => {
-    const playerInfo = async () => {
-      const resp = await axios.get(playerURL, config);
-      setPlayers(resp.data.records);
-    };
-    playerInfo();
-  }, []);
-
-  const player = players.find((player) => player.id === params.name);
-  if (!player) {
+  const knick = props.knicks.find((knick) => knick.id === params.id);
+  if (!knick) {
     return <h2></h2>;
   }
   return (
-    <div className="player-card">
-      <div className="player-pic">
-        <h2 className="player-name">{player.fields.name}</h2>
-        <img className="player-pic" src={player.fields.pic} alt="player-pic" />
-        <h3 className="player-position">{player.fields.position}</h3>
-        <p className="ppg">Points per game {player.fields.pointsPerGame}</p>
-        <p className="apg">Assists per game {player.fields.assistsPerGame}</p>
-        <p className="rpg">Rebounds per game {player.fields.reboundsPerGame}</p>
+    <div className="knick-card">
+      <div className="knick-info">
+        <h2 className="knick-name">{knick.fields.name}</h2>
+        <img className="knickr-pic" src={knick.fields.pic} alt="player-pic" />
+        <h3 className="kick-position">{knick.fields.position}</h3>
+        <p className="knick-ppg">Points per game {knick.fields.pointsPerGame}</p>
+        <p className="knick-apg">Assists per game {knick.fields.assistsPerGame}</p>
+        <p className="knick-rpg">Rebounds per game {knick.fields.reboundsPerGame}</p>
       </div>
     </div>
   );

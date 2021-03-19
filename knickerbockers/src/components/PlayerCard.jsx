@@ -11,6 +11,7 @@ function PlayerCard() {
   }
   stats()
 
+
   return (
     <div>
       <h3>{params.name}</h3>

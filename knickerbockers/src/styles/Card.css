@@ -28,19 +28,19 @@
   text-shadow: black 2px 2px;
 }
 
-.player-position {
+.knick-position {
   grid-row: 3 / 4;
 }
 
-.ppg {
+.knick-ppg {
   grid-row: 4 / 5;
 }
 
-.apg {
+.knick-apg {
   grid-row: 5 / 6;
 }
 
-.rpg {
+.knick-rpg {
   grid-row: 6 / 7;
 }
 
