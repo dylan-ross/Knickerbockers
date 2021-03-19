@@ -20,9 +20,11 @@ function Squad() {
 
   const handleClick = async (id) => {
     const benchURL = `${teamsURL}/${id}`;
-    await axios.delete(benchURL, config);
-    setToggleFetch((curr) => !curr);
-    history.push("/");
+    if (benchURL !== `${teamsURL}/recJ7ItCIa4v7sG6V`) {
+      await axios.delete(benchURL, config);
+      setToggleFetch((curr) => !curr);
+      history.push("/");
+    }
   };
 
   return (

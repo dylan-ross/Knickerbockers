@@ -29,9 +29,11 @@ function EditSquad() {
     };
 
     const putURL = `${teamsURL}/${params.id}`
-    await axios.put(putURL, { fields: newTeam }, config);
-    setToggleFetch((curr) => !curr);
-    history.push("/")
+    if (putURL !== `${teamsURL}/recJ7ItCIa4v7sG6V`) {
+      await axios.put(putURL, { fields: newTeam }, config);
+      setToggleFetch((curr) => !curr);
+      history.push("/")
+    }
   };
 
   return (
