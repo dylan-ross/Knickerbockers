@@ -2,12 +2,16 @@
 
 
 .nav {
-  display: grid;
+  padding: 2px 2px;
 }
+
+
 
 
 #knicks, #sq, #next {
   font-family: Permanent Marker;
+  font-size:large;
   color: blue;
   text-shadow: black 1px 1px;
+  font-weight: 100;
 }

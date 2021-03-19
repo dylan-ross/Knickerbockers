@@ -10,9 +10,10 @@
 .knickerbockers {
   color: rgb(255, 115, 0);
   text-shadow: blue 1px 1px;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   font-family: Oxygen;
-  text-decoration-line: none;
+  text-decoration: none;
+  margin: 10px auto;
 }
 
 

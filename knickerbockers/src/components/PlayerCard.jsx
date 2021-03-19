@@ -1,21 +1,23 @@
 import {useParams} from "react-router-dom"
+import "../styles/PlayerCard.css"
 
 function PlayerCard() {
   const params = useParams()
   console.log(params)
   function stats () {
-    const ppg = Math.floor(Math.random() * 30)
-    const apg = Math.floor(Math.random() * 11)
-    const rpg = Math.floor(Math.random() * 15)
-    return ppg, apg, rpg
+    let ppg = Math.floor(Math.random() * 30)
+    let apg = Math.floor(Math.random() * 11)
+    let rpg = Math.floor(Math.random() * 15)
+    
+    
   }
   stats()
 
 
   return (
-    <div>
-      <h3>{params.name}</h3>
-      <p>ppg</p>
+    <div className="player-card">
+      <h3 className="player-name">{params.name}</h3>
+      <p>{`${ stats() }`}</p>
       <p>apg</p>
       <p>rpg</p>
     </div>

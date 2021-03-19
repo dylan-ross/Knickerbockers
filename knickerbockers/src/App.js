@@ -41,17 +41,17 @@ function App() {
       <Route exact path="/edit/:id">
         <NewSquad setToggleFetch={setToggleFetch } teams={teams }/>
       </Route>
-      <Route path="/player/:name">
+      <Route exact path="/player/:name">
         <PlayerCard teams={teams }/>
       </Route>
-      <Route path="/knicks">
+      <Route exact path="/knicks">
         <Knicks knicks={knicks}/>
       </Route>
-      <Route path="/knick/:id">
+      <Route exact path="/knick/:id">
         <KnicksCard knicks={knicks}/>
       </Route>
     </div>
-  );
+  ); 
 }
 
 export default App;

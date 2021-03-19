@@ -32,6 +32,7 @@
   color: rgb(255, 115, 0);
   text-shadow: blue 2px 2px;  
   font-family: Permanent Marker;
+  font-size: 3em;
   font-weight: 100;
   grid-column: 2 / 3;
 }
@@ -42,6 +43,10 @@
   .teams-container {
     /* grid-template-columns: repeat(5, 1fr); */
     grid-auto-flow: row dense;
+  }
+
+  #squads {
+    font-size: 6em;
   }
 }
 

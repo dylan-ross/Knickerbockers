@@ -1,7 +1,9 @@
 import { useState } from "react";
+// import {Route} from "react-router-dom"
 import axios from "axios";
 import { teamsURL, config } from "../services";
-import { useHistory,  useParams} from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
+// import CenterForm from "./CreateForms/CenterForm"
 import "../styles/SquadForm.css";
 
 function NewSquad(props) {
@@ -13,8 +15,8 @@ function NewSquad(props) {
   const [center, setCenter] = useState("");
   const params = useParams()
   const history = useHistory();
-  console.log(props);
-  console.log(params)
+  // console.log(props);
+  // console.log(params)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,24 +28,6 @@ function NewSquad(props) {
       powerForward,
       center,
     };
-
-
-
-    // useEffect(() => {
-    //   if (params.id && props.teams.length > 0) {
-    //     const team = props.teams.find((sitcom) => team.id === params.id);
-    //     if (team) {
-    //       setTeamName(team.fields.name);
-    //       setPointGuard(team.fields.pointGuard);
-    //       setShootingGuard(team.fields.shootingGuard);
-    //       setSmallForward(team.fields.smallForward);
-    //       setPowerForward(team.fields.poweerForward);
-    //       setCenter(team.fields.center);
-    //     }
-    //   }
-    // }, [props.teams, params.id])
-
-
 
     if (params.id) {
       const subURL = `${teamsURL}/${params.id}`;
@@ -70,6 +54,7 @@ function NewSquad(props) {
           <input
             required
             type="text"
+            placeholder={teamName}
             value={teamName}
             onChange={(e) => setTeamName(e.target.value)}
           />
@@ -110,6 +95,9 @@ function NewSquad(props) {
             onChange={(e) => setPowerForward(e.target.value)}
           />
         </div>
+        {/* <Route>
+          <CenterForm teams={props.teams }/>
+        </Route> */}
         <div className="form" id="center">
           <label id="center" htmlFor="center">Center</label>
           <input

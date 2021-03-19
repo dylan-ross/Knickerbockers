@@ -1,7 +1,8 @@
 import {useState} from "react"
 
-function CenterForm() {
-const [name, setName] = useState("")
+function CenterForm(props) {
+  const [name, setName] = useState("")
+  console.log(props)
 
   return (
     <div className="form" id="center">
