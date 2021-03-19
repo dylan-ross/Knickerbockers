@@ -5,10 +5,10 @@
   text-align: center;
   /* background-color: black; */
   background-color: rgb(255, 115, 0);
-  
+
 }
 
-.nav {
+/* .nav {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -16,8 +16,8 @@
   color: black;
   padding: 2px;
   width: 100%;
-}
+} */
 
-.nav a {
+/* .nav a {
   padding: 0px 5px;
-}
+} */
