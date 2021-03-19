@@ -5,7 +5,7 @@ import "../styles/Squads.css";
 import { Link, Route, useHistory } from "react-router-dom";
 import PlayerCard from "./PlayerCard";
 
-function Squad(props) {
+function Squad() {
   const [teamsInfo, setTeamsInfo] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(false);
   const history = useHistory();

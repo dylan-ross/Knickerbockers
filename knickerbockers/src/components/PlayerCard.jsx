@@ -1,5 +1,7 @@
-function PlayerCard(props) {
-console.log(props)
+function PlayerCard() {
+  function pointsPerGame () {
+    Math.floor(Math.random())
+  }
 
   return (
     <div>

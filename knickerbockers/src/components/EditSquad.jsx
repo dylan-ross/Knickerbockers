@@ -17,7 +17,6 @@ function EditSquad() {
   const history = useHistory()
   console.log(params)
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newTeam = {
@@ -29,14 +28,7 @@ function EditSquad() {
       center,
     };
 
-    // if (props.id) {
-    //   const putURL = `${teamsURL}/team.id`
-    //   await axios.put(putURL, { fields: newTeam }, config);
-    // } else {
-    //   await axios.post(teamsURL, { fields: newTeam }, config);
-    // }
     const putURL = `${teamsURL}/${params.id}`
-
     await axios.put(putURL, { fields: newTeam }, config);
     setToggleFetch((curr) => !curr);
     history.push("/")

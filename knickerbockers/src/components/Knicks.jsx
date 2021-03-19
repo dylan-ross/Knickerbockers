@@ -8,8 +8,6 @@ import axios from "axios";
 function Knicks() {
   const [players, setPlayers] = useState([]);
   
-
-
   useEffect(() => {
     const playerInfo = async () => {
       const resp = await axios.get(playerURL, config);
