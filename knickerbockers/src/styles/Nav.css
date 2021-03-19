@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
 .nav {
-  color: rgb(255, 115, 0);
+  display: grid;
 }
 
-.nav a {
-  padding: 0px 5px;
-  color: white;
+
+#knicks, #sq, #next {
+  font-family: Permanent Marker;
+  color: blue;
+  text-shadow: black 1px 1px;
 }

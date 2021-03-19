@@ -26,7 +26,7 @@ function KnicksCard() {
     <div className="player-card">
       <div className="player-pic">
         <h2 className="player-name">{player.fields.name}</h2>
-        <img className="player-pic" src={player.fields.pic} />
+        <img className="player-pic" src={player.fields.pic} alt="player-pic"/>
         <h3 className="player-position">{player.fields.position}</h3>
         <p className="ppg">Points per game {player.fields.pointsPerGame}</p>
         <p className="apg">Assists per game {player.fields.assistsPerGame}</p>

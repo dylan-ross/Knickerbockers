@@ -1,6 +1,6 @@
-import { playerURL, config } from "./services";
-import { Link, Route } from "react-router-dom";
-import axios from "axios";
+// import { playerURL, config } from "./services";
+import { Route } from "react-router-dom";
+// import axios from "axios";
 import Navbar from "./components/Navbar";
 import KnicksCard from "./components/KnicksCard";
 import NewSquad from "./components/NewSquad";
