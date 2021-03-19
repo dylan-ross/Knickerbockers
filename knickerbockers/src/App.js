@@ -1,4 +1,4 @@
-import { teamsURL, config } from "./services";
+import { playerURL, config } from "./services";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./components/Navbar";
@@ -7,39 +7,39 @@ import NewSquad from "./components/NewSquad";
 import EditSquad from "./components/EditSquad";
 import Squad from "./components/Squad";
 import Knicks from "./components/Knicks";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [teams, setTeams] = useState([]);
-  const [toggleFetch, setToggleFetch] = useState(false);
+  // const [players, setPlayers] = useState([]);
+  // const [toggleFetch, setToggleFetch] = useState(false);
 
-  useEffect(() => {
-    const teamsInfo = async () => {
-      const resp = await axios.get(teamsURL, config);
-      setTeams(resp.data.records);
-    };
-    teamsInfo();
-  }, [toggleFetch]);
+  // useEffect(() => {
+  //   const playerInfo = async () => {
+  //     const resp = await axios.get(playerURL, config);
+  //     setPlayers(resp.data.records);
+  //   };
+  //   playerInfo();
+  // }, [toggleFetch]);
 
   return (
     <div className="App">
       <Navbar />
       <Route exact path="/">
-        <Squad setToggleFetch={setToggleFetch} />
+        <Squad />
       </Route>
       <Route exact path="/new">
-        <NewSquad setToggleFetch={setToggleFetch} />
+        <NewSquad />
       </Route>
       <Route exact path="/edit/:id">
-        <EditSquad setToggleFetch={setToggleFetch} />
+        <EditSquad />
       </Route>
       <Route path="/knicks">
         <Knicks />
       </Route>
-      {/* <Route path="/player/:name">
+      <Route path="/player/:name">
         <KnicksCard />
-      </Route> */}
+      </Route>
     </div>
   );
 }

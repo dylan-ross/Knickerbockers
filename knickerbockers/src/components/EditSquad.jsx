@@ -11,8 +11,8 @@ function EditSquad(props) {
   const [shootingGuard, setShootingGuard] = useState("");
   const [smallForward, setSmallForward] = useState("");
   const [center, setCenter] = useState("");
+  const [toggleFetch, setToggleFetch] = useState(false)
   const history = useHistory()
-  console.log(props)
 
 
   const handleSubmit = async (e) => {
@@ -34,13 +34,14 @@ function EditSquad(props) {
     // }
 
     await axios.put(teamsURL, { fields: newTeam }, config);
-    // props.setToggleFetch((curr) => !curr);
+    props.setToggleFetch((curr) => !curr);
     history.push("/")
+    // console.log(teamName)
   };
 
   return (
     <form onSubmit={handleSubmit} className="squad-form">
-      <div className="form" id="team-name-create">
+      {/* <div className="form" id="team-name-create">
         <label htmlFor="team">Team Name:</label>
         <input
           required
@@ -49,7 +50,7 @@ function EditSquad(props) {
           value={teamName}
           onChange={(e) => setTeamName(e.target.value)}
         />
-      </div>
+      </div> */}
       <div className="form" id="pg">
         <label htmlFor="pg">Point Guard</label>
         <input

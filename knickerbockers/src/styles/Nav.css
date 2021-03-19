@@ -1,12 +1,5 @@
 .nav {
-  color: white;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: var(--orange);
-  color: black;
-  padding: 2px;
-  width: 100%;
+  color: rgb(255, 115, 0);
 }
 
 .nav a {
