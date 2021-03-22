@@ -98,9 +98,6 @@ function NewSquad(props) {
             onChange={(e) => setPowerForward(e.target.value)}
           />
         </div>
-        {/* <Route>
-          <CenterForm teams={props.teams }/>
-        </Route> */}
         <div className="form" id="center">
           <label id="center" htmlFor="center">
             Center
