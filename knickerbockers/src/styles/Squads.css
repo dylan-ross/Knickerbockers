@@ -35,7 +35,6 @@
 .player {
   color: white;
   font-family: Architects Daughter;
-  /* text-shadow: blue 1px 1px; */
   grid-column: 2 / 3;
   text-decoration: none;
 }

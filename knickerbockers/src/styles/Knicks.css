@@ -7,7 +7,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+.logo {
+  width: 50%;
+  border: solid black 1px;
+  border-radius: 20%;
 }
 
 .knickerbockers {
@@ -18,23 +24,25 @@
   text-decoration: none;
   padding: 5px 10px;
   border-radius: 20%;
-  flex-direction: row;
+  flex-grow: 2;
+
 }
 
-@media screens and (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .knicks {
-    flex-direction: row;
+    /* flex-direction: row; */
     flex-wrap: wrap;
-    /* justify-content: space-around;
-    align-items: space-between; */
+  }
+
+  .knickerbockers {
+    width: 100%;
   }
 }
 
-@media screens and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .knicks {
     flex-direction: row;
+    justify-content: space-around;
   }
-}
-
-@media screens and (min-width: 1200px) {
+  
 }

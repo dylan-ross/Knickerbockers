@@ -32,10 +32,10 @@ function PlayerCard(props) {
     <div className="players">
       <div className="player-card">
             {/* <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fnerd-basketball-player-in-blue-white-picture-id160491538%3Fk%3D6%26m%3D160491538%26s%3D612x612%26w%3D0%26h%3DBydtaRNlL0q51LH5gsgNfoh3NCdj6aKnwPDu6M6CljM%3D&f=1&nofb=1" alt="Player Picture" width="300px" height="300px"/> */}
-            <h2>STATS</h2>
-            <p>Points Per Game: {`${ppgs()}`}</p>
-            <p>Assists Per Game: {`${apgs()}`}</p>
-            <p>Rebounds Per Gaem: {`${rpgs()}`}</p>
+            <h2 className="stats">STATS</h2>
+            <p className="stats">Points Per Game: {`${ppgs()}`}</p>
+            <p className="stats">Assists Per Game: {`${apgs()}`}</p>
+            <p className="stats">Rebounds Per Gaem: {`${rpgs()}`}</p>
           </div>
         </div>
   );

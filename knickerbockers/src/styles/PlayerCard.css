@@ -15,19 +15,20 @@
 .player-card {
   background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fnerd-basketball-player-in-blue-white-picture-id160491538%3Fk%3D6%26m%3D160491538%26s%3D612x612%26w%3D0%26h%3DBydtaRNlL0q51LH5gsgNfoh3NCdj6aKnwPDu6M6CljM%3D&f=1&nofb=1");
   background-size: cover;
+  background-position: center;
   justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
   width: 70%;
+  height: 70%;
   border-radius: 40px;
   color: rgb(255, 115, 0);
   text-shadow: blue 1px 1px;
-  width: 300px;
-  height: 300px;
   border: 1px solid black;
-  perspective: 1000px;
   overflow: scroll;
 }
 
-h2, p {
+.stats {
   background-color: rgba(1, 1, 1, .5);
 }
 
