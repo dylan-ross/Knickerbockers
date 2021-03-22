@@ -15,8 +15,6 @@ function NewSquad(props) {
   const [center, setCenter] = useState("");
   const params = useParams();
   const history = useHistory();
-  // console.log(props);
-  // console.log(params)
 
   const handleSubmit = async (e) => {
     e.preventDefault();

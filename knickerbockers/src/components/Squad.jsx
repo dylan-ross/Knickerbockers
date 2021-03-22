@@ -3,6 +3,7 @@ import { teamsURL, config } from "../services";
 import "../styles/Squads.css";
 import { Link, Route, useHistory } from "react-router-dom";
 import PlayerCard from "./PlayerCard";
+import Player from "./Player";
 
 function Squad(props) {
   const history = useHistory();
@@ -21,34 +22,40 @@ function Squad(props) {
         {props.teams.map((team) => (
           <div key={team.id} className="team-box" id={team.id}>
             <h2 className="team-name">{team.fields.teamName}</h2>
+            <div className="position">
+            <p>point guard:</p>
             <Link
               key={team.fields.pointGuard}
               to={`/player/${team.fields.pointGuard}`}
-            >
-              <p className="player" id="pg">
-                point guard: {team.fields.pointGuard}
-              </p>
-            </Link>
+              >
+          
+              <Player player={team.fields.pointGuard} />
+              </Link>
+            </div>
+            <div className="position">
+            <p>shooting guard:</p>
             <Link key={team.fields.shootingGuard} to={`/player/${team.id}`}>
-              <p className="player" id="sg">
-                shooting guard: {team.fields.shootingGuard}
-              </p>
-            </Link>
+              <Player player={team.fields.shootingGuard} />
+              </Link>
+            </div>
+            <div className="position">
+            <p>small forward:</p>
             <Link key={team.fields.smallForward} to={`/player/${team.id}`}>
-              <p className="player" id="sf">
-                small forward: {team.fields.smallForward}
-              </p>
-            </Link>
+              <Player player={team.fields.smallForward} />
+              </Link>
+            </div>
+            <div className="position">
+            <p>power forward:</p>
             <Link key={team.fields.powerForward} to={`/player/${team.id}`}>
-              <p className="player" id="pf">
-                power forward: {team.fields.powerForward}
-              </p>
-            </Link>
+              <Player player={team.fields.powerForward} />
+              </Link>
+            </div>
+            <div className="position">
+            <p>center:</p>
             <Link key={team.fields.center} to={`/player/${team.id}`}>
-              <p className="player" id="center">
-                center: {team.fields.center}
-              </p>
-            </Link>
+              <Player player={team.fields.center} />
+              </Link>
+              </div>
             <button onClick={() => handleClick(team.id)}>Benched</button>
             <Link to={`/edit/${team.id}`}>
               <button>subs</button>
