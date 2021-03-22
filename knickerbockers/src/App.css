@@ -1,23 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&display=swap");
 
-
-.App { 
+.App {
   text-align: center;
-  /* background-color: black; */
   background-color: rgb(255, 115, 0);
-
 }
-
-/* .nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: var(--orange);
-  color: black;
-  padding: 2px;
-  width: 100%;
-} */
-
-/* .nav a {
-  padding: 0px 5px;
-} */

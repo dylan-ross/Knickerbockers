@@ -13,7 +13,7 @@ function NewSquad(props) {
   const [shootingGuard, setShootingGuard] = useState("");
   const [smallForward, setSmallForward] = useState("");
   const [center, setCenter] = useState("");
-  const params = useParams()
+  const params = useParams();
   const history = useHistory();
   // console.log(props);
   // console.log(params)
@@ -31,7 +31,7 @@ function NewSquad(props) {
 
     if (params.id) {
       const subURL = `${teamsURL}/${params.id}`;
-      await axios.put(subURL, { fields: newTeam }, config)
+      await axios.put(subURL, { fields: newTeam }, config);
     } else {
       await axios.post(teamsURL, { fields: newTeam }, config);
     }
@@ -39,18 +39,13 @@ function NewSquad(props) {
     history.push("/");
   };
 
-
-
-    // await axios.post(teamsURL, { fields: newTeam }, config);
-    // props.setToggleFetch((curr) => !curr);
-    // history.push("/");
-  // };
-
   return (
     <div>
       <form onSubmit={handleSubmit} className="squad-form">
         <div className="form" id="team-name-create">
-          <label id="team" htmlFor="team">Team Name:</label>
+          <label id="team" htmlFor="team">
+            Team Name:
+          </label>
           <input
             required
             type="text"
@@ -60,7 +55,9 @@ function NewSquad(props) {
           />
         </div>
         <div className="form" id="pg">
-          <label id="pg" htmlFor="pg">Point Guard</label>
+          <label id="pg" htmlFor="pg">
+            Point Guard
+          </label>
           <input
             required
             type="text"
@@ -69,7 +66,9 @@ function NewSquad(props) {
           />
         </div>
         <div className="form" id="sg">
-          <label id="sg" htmlFor="sg">Shooting Guard</label>
+          <label id="sg" htmlFor="sg">
+            Shooting Guard
+          </label>
           <input
             required
             type="text"
@@ -78,7 +77,9 @@ function NewSquad(props) {
           />
         </div>
         <div className="form" id="sf">
-          <label id="sf" htmlFor="sf">Small Forward</label>
+          <label id="sf" htmlFor="sf">
+            Small Forward
+          </label>
           <input
             required
             type="text"
@@ -87,7 +88,9 @@ function NewSquad(props) {
           />
         </div>
         <div className="form" id="pf">
-          <label id="pf" htmlFor="pf">Power Forward</label>
+          <label id="pf" htmlFor="pf">
+            Power Forward
+          </label>
           <input
             required
             type="text"
@@ -99,7 +102,9 @@ function NewSquad(props) {
           <CenterForm teams={props.teams }/>
         </Route> */}
         <div className="form" id="center">
-          <label id="center" htmlFor="center">Center</label>
+          <label id="center" htmlFor="center">
+            Center
+          </label>
           <input
             required
             type="text"

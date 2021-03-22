@@ -25,12 +25,10 @@
   padding: 5px 10px;
   border-radius: 20%;
   flex-grow: 2;
-
 }
 
 @media screen and (min-width: 768px) {
   .knicks {
-    /* flex-direction: row; */
     flex-wrap: wrap;
   }
 
@@ -44,5 +42,4 @@
     flex-direction: row;
     justify-content: space-around;
   }
-  
 }

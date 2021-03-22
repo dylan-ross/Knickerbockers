@@ -7,7 +7,13 @@
   grid-template-rows: repeat(9, 1fr);
 }
 
-#team-name-create, #pg, #sg, #sf, #pf, #center, .submit {
+#team-name-create,
+#pg,
+#sg,
+#sf,
+#pf,
+#center,
+.submit {
   grid-column: 2 / 3;
   color: white;
   border-radius: 20%;
@@ -38,7 +44,7 @@
 }
 
 .submit {
-  grid-row: 8 / 9 ;
+  grid-row: 8 / 9;
   color: black;
   border-radius: 10%;
 }
@@ -47,22 +53,29 @@
   .squad-form {
     grid-template-columns: repeat(5, 1fr);
   }
-  #team-name-create, #pg, #sg, #sf, #pf, #center, .submit {
+  #team-name-create,
+  #pg,
+  #sg,
+  #sf,
+  #pf,
+  #center,
+  .submit {
     grid-column: 3 / 4;
   }
-
 }
 
 @media screen and (min-width: 600px) {
   .squad-form {
-    grid-template-columns: repeat(7, 1fr)
+    grid-template-columns: repeat(7, 1fr);
   }
 
-  #team-name-create, .submit {
+  #team-name-create,
+  .submit {
     grid-column: 4 / 5;
   }
 
-  #pg, #sf {
+  #pg,
+  #sf {
     grid-column: 2 / 4;
   }
 
@@ -84,10 +97,12 @@
 
 @media screen and (min-width: 800px) {
   .squad-form {
-    grid-template-columns: repeat(9, 1fr)
+    grid-template-columns: repeat(9, 1fr);
   }
 
-  #team-name-create, #center, .submit {
+  #team-name-create,
+  #center,
+  .submit {
     grid-column: 5 / 6;
   }
 
@@ -105,19 +120,19 @@
 
   #pf {
     grid-column: 7 / 8;
-  } 
-
-
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .squad-form {
-    grid-template-columns: repeat(11, 1fr)
+    grid-template-columns: repeat(11, 1fr);
   }
 
-  #team-name-create, #center, .submit {
+  #team-name-create,
+  #center,
+  .submit {
     grid-column: 6 / 7;
-  } 
+  }
 
   #pg {
     grid-column: 4 / 5;
@@ -130,18 +145,18 @@
   #pf {
     grid-column: 9 / 10;
   }
-
-
 }
 
 @media screen and (min-width: 1200px) {
   .squad-form {
-    grid-template-columns: repeat(13, 1fr)
+    grid-template-columns: repeat(13, 1fr);
   }
 
-  #team-name-create, #center, .submit {
+  #team-name-create,
+  #center,
+  .submit {
     grid-column: 7 / 8;
-  } 
+  }
 
   #pg {
     grid-column: 5 / 6;
@@ -154,17 +169,18 @@
   #pf {
     grid-column: 11 / 12;
   }
-
 }
 
 @media screen and (min-width: 1400px) {
   .squad-form {
-    grid-template-columns: repeat(15, 1fr)
+    grid-template-columns: repeat(15, 1fr);
   }
 
-  #team-name-create, #center, .submit {
+  #team-name-create,
+  #center,
+  .submit {
     grid-column: 8 / 9;
-  } 
+  }
 
   #pg {
     grid-column: 6 / 7;
@@ -174,13 +190,10 @@
     grid-column: 10 / 11;
   }
 
-  #sf {}
+  #sf {
+  }
 
   #pf {
     grid-column: 13 / 14;
   }
-
-
 }
-
-

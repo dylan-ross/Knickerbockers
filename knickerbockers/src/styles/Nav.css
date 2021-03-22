@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 .nav {
-display: flex;
-justify-content: space-around;  
+  display: flex;
+  justify-content: space-around;
 }
 
-
-
-
-#knicks, #sq, #next {
+#knicks,
+#sq,
+#next {
   font-family: Permanent Marker;
-  font-size:large;
+  font-size: large;
   color: blue;
   text-shadow: black 1px 1px;
   font-weight: 100;
   padding: 10px;
 }
 
-
 @media screen and (min-width: 768) {
-   
-    #knicks, #sq, #next {
-      font-size: x-large;
-    }
+  #knicks,
+  #sq,
+  #next {
+    font-size: x-large;
+  }
 }
 
 @media screen and (min-width: 988) {
-  #knicks, #sq, #next {
+  #knicks,
+  #sq,
+  #next {
     font-size: xx-large;
   }
 }
