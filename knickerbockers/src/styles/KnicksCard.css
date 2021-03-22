@@ -7,15 +7,15 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  text-decoration: none;
   overflow: scroll;
+  
 }
 
 .knick-pic {
   width: 100vw;
 }
 
-.knick-position, .ppg, .apg, .rpg {
+.knick-position, .knick-ppg, .knick-apg, .knick-rpg, .knick-pic {
   grid-column: 2 / 3;
   background-color: black;
   border-radius: 20%;
@@ -33,6 +33,7 @@
 
 .knick-ppg {
   grid-row: 4 / 5;
+
 }
 
 .knick-apg {
