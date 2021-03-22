@@ -1,26 +1,43 @@
-import {useParams} from "react-router-dom"
-import "../styles/PlayerCard.css"
+import { useParams } from "react-router-dom";
+import "../styles/PlayerCard.css";
 
-function PlayerCard() {
-  const params = useParams()
-  console.log(params)
-  function stats () {
-    let ppg = Math.floor(Math.random() * 30)
-    let apg = Math.floor(Math.random() * 11)
-    let rpg = Math.floor(Math.random() * 15)
-    
-    
+function PlayerCard(props) {
+  const params = useParams();
+  console.log(params);
+  console.log(props);
+  function ppgs() {
+    let ppg = Math.floor(Math.random() * 30);
+    return ppg;
   }
-  stats()
+  ppgs();
 
+  function apgs() {
+    let apg = Math.floor(Math.random() * 11);
+    return apg;
+  }
+  apgs();
+
+  function rpgs() {
+    let rpg = Math.floor(Math.random() * 11);
+    return rpg;
+  }
+  apgs();
+
+  // const player = props.teams.find((player) => player.id === params.id);
+  // if (!player) {
+  //   return <h2></h2>;
+  // }
 
   return (
-    <div className="player-card">
-      <h3 className="player-name">{params.name}</h3>
-      <p>{`${ stats() }`}</p>
-      <p>apg</p>
-      <p>rpg</p>
-    </div>
+    <div className="players">
+      <div className="player-card">
+            {/* <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fnerd-basketball-player-in-blue-white-picture-id160491538%3Fk%3D6%26m%3D160491538%26s%3D612x612%26w%3D0%26h%3DBydtaRNlL0q51LH5gsgNfoh3NCdj6aKnwPDu6M6CljM%3D&f=1&nofb=1" alt="Player Picture" width="300px" height="300px"/> */}
+            <h2>STATS</h2>
+            <p>Points Per Game: {`${ppgs()}`}</p>
+            <p>Assists Per Game: {`${apgs()}`}</p>
+            <p>Rebounds Per Gaem: {`${rpgs()}`}</p>
+          </div>
+        </div>
   );
 }
 

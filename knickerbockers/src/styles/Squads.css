@@ -1,59 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap");
 
 .teams-container {
   background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.newhampshirepavingpros.com%2Fuploads%2F9%2F6%2F9%2F6%2F96965846%2Fpublished%2F6611904-orig.jpg%3F1485566266&f=1&nofb=1");
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  overflow: scroll;
+}
+
+.teams {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   overflow: scroll;
 }
 
 
 .team-box {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 20%;
   grid-column: 2 / 3;
   margin: 10px auto;
   padding: 10px 20px;
+  text-decoration: none;
 }
 
-.team-name, .player {
+.team-name,
+.player {
   color: white;
   font-family: Architects Daughter;
-  text-shadow: blue 1px 1px;
+  /* text-shadow: blue 1px 1px; */
   grid-column: 2 / 3;
   text-decoration: none;
 }
 
 #squads {
   color: rgb(255, 115, 0);
-  text-shadow: blue 2px 2px;  
+  text-shadow: blue 2px 2px;
   font-family: Permanent Marker;
   font-size: 3em;
   font-weight: 100;
   grid-column: 2 / 3;
 }
 
-
-
-@media screens and (min-width: 768px) {
-  .teams-container {
-    /* grid-template-columns: repeat(5, 1fr); */
-    grid-auto-flow: row dense;
-  }
-
+@media screen and (min-width: 768px) {
   #squads {
-    font-size: 6em;
+    font-size: 10em;
   }
 }
 
-@media screens and (min-width: 992px) {
-
-}
-
-@media screens and (min-width: 1200px) {
-  
+@media screen and (min-width: 1200px) {
+  .teams {
+    flex-flow: row;
+    overflow: scroll;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 }

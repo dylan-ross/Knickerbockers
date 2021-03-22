@@ -3,7 +3,7 @@
 
 .nav {
 display: flex;
-justify-content: center;  
+justify-content: space-around;  
 }
 
 
@@ -16,4 +16,18 @@ justify-content: center;
   text-shadow: black 1px 1px;
   font-weight: 100;
   padding: 10px;
+}
+
+
+@media screen and (min-width: 768) {
+   
+    #knicks, #sq, #next {
+      font-size: x-large;
+    }
+}
+
+@media screen and (min-width: 988) {
+  #knicks, #sq, #next {
+    font-size: xx-large;
+  }
 }

@@ -2,14 +2,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 
-.player-card {
+.players {
   background-image: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.newhampshirepavingpros.com%2Fuploads%2F9%2F6%2F9%2F6%2F96965846%2Fpublished%2F6611904-orig.jpg%3F1485566266&f=1&nofb=1");
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.player-name {
-  font-family: Permanent Marker; 
-  font-weight: lighter;
-  text-shadow: white 1px 1px;
+.player-card {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Fnerd-basketball-player-in-blue-white-picture-id160491538%3Fk%3D6%26m%3D160491538%26s%3D612x612%26w%3D0%26h%3DBydtaRNlL0q51LH5gsgNfoh3NCdj6aKnwPDu6M6CljM%3D&f=1&nofb=1");
+  background-size: cover;
+  justify-content: center;
+  width: 70%;
+  border-radius: 40px;
+  color: rgb(255, 115, 0);
+  text-shadow: blue 1px 1px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  perspective: 1000px;
+  overflow: scroll;
 }
+
+h2, p {
+  background-color: rgba(1, 1, 1, .5);
+}
+
+

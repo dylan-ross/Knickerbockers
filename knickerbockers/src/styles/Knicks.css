@@ -21,28 +21,6 @@
   flex-direction: row;
 }
 
-/* #Bernard King { */
-/* bernard */
-/* grid-column: 2 / 3; */
-/* } */
-
-/* div#recEz4vCxVbOpLfFW.knickerbocker {  */
-/*Melo */
-/* grid-column: 2 / 3; */
-/* } */
-
-/* #recTKiggGiZJeB32b { */
-/* Willis */
-/* } */
-
-/* #recP7jfAxBb71LFSP { */
-/* Pat */
-/* } */
-
-/* #recxaOzIAf6FZKP6i { */
-/* Clyde */
-/* } */
-
 @media screens and (min-width: 768px) {
   .knicks {
     flex-direction: row;

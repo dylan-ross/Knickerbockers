@@ -6,21 +6,18 @@ import PlayerCard from "./PlayerCard";
 
 function Squad(props) {
   const history = useHistory();
-  console.log(props)
-
 
   const handleClick = async (id) => {
     const benchURL = `${teamsURL}/${id}`;
-    if (benchURL !== `${teamsURL}/recJ7ItCIa4v7sG6V`) {
       await axios.delete(benchURL, config);
       props.setToggleFetch((curr) => !curr);
       history.push("/");
-    }
   };
 
   return (
     <div className="teams-container">
       <h1 id="squads">SQUADS</h1>
+      <div className="teams">
       {props.teams.map((team) => (
         <div key={team.id} className="team-box" id={team.id}>
           <h2 className="team-name">{team.fields.teamName}</h2>
@@ -65,11 +62,12 @@ function Squad(props) {
           <Link to={`/edit/${team.id}`}>
             <button>subs</button>
           </Link>
-          <Route path={`/player/${team.fields.pointGuard}`}>
+          <Route path="/player">
             <PlayerCard teams={props} />
           </Route>
         </div>
       ))}
+    </div>
     </div>
   );
 }
