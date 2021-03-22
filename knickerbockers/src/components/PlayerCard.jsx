@@ -23,7 +23,6 @@ function PlayerCard(props) {
   }
   apgs();
 
-
   return (
     <div className="players">
       <div className="player-card">

@@ -19,7 +19,6 @@
   text-decoration: none;
 }
 
-
 .team-box {
   border: solid rgb(255, 115, 0) 2px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -30,7 +29,8 @@
   text-decoration-line: none;
 }
 
-.team-name, p {
+.team-name,
+p {
   color: white;
   grid-column: 2 / 3;
   text-decoration-line: blink;
@@ -42,8 +42,6 @@
   text-shadow: black 2px 2px;
   font-weight: bolder;
 }
-
-
 
 #squads {
   color: rgb(255, 115, 0);

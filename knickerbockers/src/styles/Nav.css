@@ -9,25 +9,25 @@
 #sq,
 #next {
   font-family: Permanent Marker;
-  font-size: large;
+  font-size: 20px;
   color: blue;
   text-shadow: black 1px 1px;
   font-weight: 100;
   padding: 10px;
 }
 
-@media screen and (min-width: 768) {
+@media screen and (min-width: 768px) {
   #knicks,
   #sq,
   #next {
-    font-size: x-large;
+    font-size: 40px;
   }
 }
 
-@media screen and (min-width: 988) {
+@media screen and (min-width: 988px) {
   #knicks,
   #sq,
   #next {
-    font-size: xx-large;
+    font-size: 50px;
   }
 }

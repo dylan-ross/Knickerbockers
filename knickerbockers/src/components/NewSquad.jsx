@@ -1,9 +1,7 @@
 import { useState } from "react";
-// import {Route} from "react-router-dom"
 import axios from "axios";
 import { teamsURL, config } from "../services";
 import { useHistory, useParams } from "react-router-dom";
-// import CenterForm from "./CreateForms/CenterForm"
 import "../styles/SquadForm.css";
 
 function NewSquad(props) {

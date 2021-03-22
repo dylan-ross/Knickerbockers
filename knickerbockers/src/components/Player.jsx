@@ -1,9 +1,8 @@
-
 function Player(props) {
   console.log(props);
   return (
     <div>
-      <p>{props.player }</p>
+      <p>{props.player}</p>
     </div>
   );
 }
